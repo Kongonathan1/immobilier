@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+<header>
+    {% include "partials/_topbar.html.twig" %}
+    {% include "partials/_banner.html.twig" %}
+</header>
+<main>
+    <section class="properties">
+        <h1 class="properties_title title">Découvrez nos dernières propriétés</h1>
+        <div class="properties_content">
+            {% for property in properties %}
+                {% include "partials/_properties_card.html.twig" %}
+            {% endfor %}
+            <a href=" {{ path('app_property_index') }} " class="all more">Voir tout</a>
+        </div>
+    </section>
+    <section class="about_we">
+        <div class="content">
+            <h2 class="title">Qui sommes-nous?</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea adipisci hic error aspernatur repudiandae laudantium deleniti numquam natus fugiat eligendi velit consequuntur in nobis earum, et reiciendis! Obcaecati, nam esse.
+                Modi nulla obcaecati consectetur dolore numquam atque saepe quos nam, harum deserunt impedit quia accusantium praesentium autem ut sed repellendus alias architecto aliquam, sunt facere quae. Quod corporis recusandae voluptatum.
+                Minus iste modi unde vitae asperiores accusamus delectus corporis quaerat minima! Architecto nesciunt accusamus voluptatibus. Laborum eos mollitia quam soluta adipisci reprehenderit expedita saepe rerum! A tenetur amet dicta maiores.
+                Neque consectetur magni nihil ea repudiandae, culpa facilis aperiam laboriosam blanditiis mollitia similique asperiores, nulla dolorum doloribus laborum cupiditate enim repellat quaerat obcaecati nobis omnis autem? Quaerat quo quasi suscipit?
+            </p>
+        </div>
+    </section>
+    <section class="team">
+        <h1 class="team_title">Découvrez notre équipe</h1>
+        <div class="team_flex">
+            <div class="team_information">
+                <img src=" {{ asset('asset/img/fixe/pseudo (1).jpg') }} " alt="" >
+                <div class="team_details">
+                    <h3 class="name">Elisey</h3>
+                    <p><small>Conseiller | Manager</small></p>
+                    <h6>+226 66 88 06 06</h6>
+                    <p>Anglais | Français | Allemand | Espagnol</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur dis, cupiditate sunt deleniti praesentium facere, blanditiis necessitatibus dignissimos commodi, quis dolore repudiandae expedita natus deserunt quam quisquam at!
+                    </p>
+                </div>
+            </div>
+            <div class="team_information">
+                <img src=" {{ asset('asset/img/fixe/pseudo (2).jpg') }} " alt="" >
+                <div class="team_details">
+                    <h3 class="name">Bernard</h3>
+                    <p><small>Conseiller | Manager</small></p>
+                    <h6>+226 51 87 04 30</h6>
+                    <p>Anglais | Français | Allemand | Espagnol</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur dis, cupiditate sunt deleniti praesentium facere, blanditiis necessitatibus dignissimos commodi, quis dolore repudiandae expedita natus deserunt quam quisquam at!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="" class="more">Contactez-nous</a>
+    </section>
+    <section class="expertise">
+        <div class="left">
+            <div class="top">
+                <h1 class="title">Une expertise professionnelle<br> A votre service</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consectetur perspiciatis modi dolores! Id, quisquam! Est minus illo nobis, sequi aliquid nisi inventore rem doloremque, ipsum exercitationem asperiores officia. Voluptatibus.
+                </p>
+                <a href="" class="more">Voir tous les services</a>
+            </div>
+            <img src="{{ asset('asset/img/fixe/Img (8).jpg') }}" alt="">
+        </div>
+        <div class="right">
+            <ul>
+                <a href=""><li>Dolore refactorer</li></a>
+                <a href=""><li>Dolore ipsum</li></a>
+                <a href=""><li>Dolore adipisicing elit</li></a>
+                <a href=""><li>Dolore Quis consectetur perspiciatis</li></a>
+                <a href=""><li>Dolore amet consectetur</li></a>
+                <a href=""><li>Dolore quisquam! Est minus illo nobis</li></a>
+                <a href=""><li>Dolore nisi inventore rem doloremque</li></a>
+                <a href=""><li>Dolore exercitationem asperiores officia voluptatibus</li></a>
+            </ul>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="left">
+            <h1 class="title">Contactez-nous</h1>
+            <div class="content">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum inventore, cupiditate facilis nesciunt.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, consectet Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ipsa, temporibus dolorum enim consequuntur.
+                </p>
+            </div>
+            <br><br>
+            <div class="dirigeants">
+                <strong>Elisey</strong>    +226 66 88 06 06 <br>
+                <strong>Bernard</strong>    +226 51 87 04 30
+            </div>
+        </div>
+        <div class="right">
+            {{ include("partials/_flash/success.html.twig") }}
+            {{ include("partials/_flash/danger.html.twig") }}
+            {{ include('Admin/message/form.html.twig') }}
+        </div>
+    </section>
+</main>
+{% endblock %}

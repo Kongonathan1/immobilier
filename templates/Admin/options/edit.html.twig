@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier {{ option.name }}{% endblock %}
+
+{% block body %}
+<header>
+    {{ include("Admin/partials/_topbar.html.twig") }}
+</header>
+<div class="container bt bb">
+    <h1 class="mb-4" >Modifier "{{ option.name }}" </h1>
+    <a href="{{ path('app_admin_options_index') }}" class="text-primary text-decration-underline mb-4" >Revenir au listing des options</a>
+    {{ include('Admin/options/_form.html.twig', {'button_label': 'Modifier'}) }}
+</div>
+{% endblock %}
+

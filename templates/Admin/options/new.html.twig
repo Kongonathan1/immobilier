@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle option{% endblock %}
+
+{% block body %}
+<header>
+    {{ include("Admin/partials/_topbar.html.twig") }}
+</header>
+<div class="container bt bb">
+    <h1 class="mb-4" >Créer une nouvelle option</h1>
+    <a href="{{ path('app_admin_options_index') }}" class="text-primary text-decoration-underline mb-4" >Revenir au listing des options</a>
+    {{ include('Admin/options/_form.html.twig') }}
+</div>
+{% endblock %}

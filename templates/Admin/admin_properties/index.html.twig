@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les biens{% endblock %}
+
+{% block body %}   
+    <header class="mb-4">
+        {{ include("Admin/partials/_topbar.html.twig") }}
+    </header>
+
+<div class="container bt"> 
+    {{ include("partials/_flash/success.html.twig") }}
+    {{ include("partials/_flash/danger.html.twig") }}
+    <div class="mb-4">
+        <h1 class="mb-2">Administration des biens immobiliers</h1>
+        <a class="btn btn-primary" href="{{ path('app_admin_properties_new') }}">Ajouter un bien</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for property in properties %}
+            <tr>
+                <td>{{ property.title }}</td>
+                <td class="d-flex justify-content-between">
+                    <a class="btn btn-primary me-4" href="{{ path('app_admin_properties_edit', {'id': property.id}) }}">Modifier</a>
+                    {{ include('Admin/admin_properties/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">Aucune propriété n'a été trouvée :(</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

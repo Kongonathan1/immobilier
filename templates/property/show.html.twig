@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ property.title }}{% endblock %}
+
+{% block body %}
+<header>
+    {% include "partials/_topbar.html.twig" %}
+</header>
+<div class="contact">
+    <div class="left">
+        <img src=" {{ vich_uploader_asset(property, 'imageFile') }} " alt="">
+        <div class="mt-4">
+            <h2>Description</h2>
+            <p>
+                {{ property.description | nl2br() }}
+            </p>
+        </div>
+        <h2 class="mb-2">Caractéristiques</h2>
+        <table class="table table-striped mt-2">
+            <tr>
+                <td>Surface: {{ property.surface | number_format(0,'', ' ') }}m² </td>
+            </tr>
+            <tr>
+                <td>Piéces: {{ property.rooms }} </td>
+            </tr>
+            <tr>
+                <td>Etages: {{ property.ceil }} ème</td>
+            </tr>
+            <tr>
+                <td>Nombres de chambres: {{ property.bedrooms }} </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right">
+        {{ include("partials/_flash/success.html.twig") }}
+        {{ include("partials/_flash/danger.html.twig") }}
+        <h1>{{ property.title }}</h1>
+        <p><strong>{{ property.rooms }} pièces -  {{ property.surface | number_format(0,'', ' ') }}m²</strong></p>
+        <h1 class="price"> {{ property.price | number_format(0,'', ' ') }} € </h1>
+        <h3>Intéresser par ce bien ?</h3>
+        {{ include('Admin/message/form.html.twig') }}
+        <div class="mt-4">
+            <h2>Spécificités</h2>
+            <ul class="list-group mt-4">
+                {% for option in property.options %}
+                    <li class="list-group-item">{{option.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

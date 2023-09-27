@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les biens{% endblock %}
+
+{% block body %}
+<header>
+    {% include "partials/_topbar.html.twig" %}
+</header>
+<main>
+    <div class="container bt">
+        <h2 class="search_title">Trouvez votre bonheur chez nous</h2>
+        <h4 class="search_filter">Trier par: </h4>
+        {{ form_start(searchForm) }}
+            <div class="row">
+                <div class="col-4">
+                    {{ form_row(searchForm.maxPrice) }}
+                    {{ form_row(searchForm.minPrice) }}
+                </div>
+                <div class="col-4">
+                    {{ form_row(searchForm.maxSurface) }}
+                    {{ form_row(searchForm.minSurface) }}
+                </div>
+                <div class="col-4">
+                    {{ form_row(searchForm.maxRooms) }}
+                    {{ form_row(searchForm.minRooms) }}
+                </div>
+                <button type="submit" class="btn btn-primary ms-3" style="width: 150px;">Rechercher</button>
+            </div>
+        {{ form_end(searchForm) }}
+    </div>
+    </div>
+    <section class="properties">
+        <h1 class="properties_title title">Toutes nos propriétés</h1>
+        <div class="properties_content">
+            {% for property in pagination %}
+                {% include "partials/_properties_card.html.twig" %}
+            {% endfor %}
+        </div>
+    </section>
+    <div id="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+    {# PAGINATION
+            
+    For this pagination to work properly, we need to be sure to set
+    the paginateBase variable in the template we are including the 
+    pagination in.
+    
+    {% set paginateBase = "/blog/p" %}
+    
+    {% if pageInfo.totalPages > 1 %}
+    <ul>
+        {% if pageInfo.currentPage != "1" %}
+            <li><a href="{{ paginateBase ~ "1" }}">First Page</a></li>
+        {% endif %}
+    
+        {% if pageInfo.prevUrl %}
+            <li><a href="{{ pageInfo.prevUrl }}">Previous Page</a></li>
+        {% endif %}
+    
+        {% for pageNumber in 1..pageInfo.totalPages %}
+            <li {% if pageInfo.currentPage == pageNumber %}class="active-page"{% endif %}>
+                <a href="{{ paginateBase ~ pageNumber }}">{{ pageNumber }}</a>
+            </li>
+        {% endfor %}
+    
+        {% if pageInfo.nextUrl %}
+            <li><a href="{{ pageInfo.nextUrl }}">Next Page</a></li>
+        {% endif %}
+    
+        {% if pageInfo.currentPage != pageInfo.total %}
+            <li><a href="{{ paginateBase ~ pageInfo.total }}">Last Page</a></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+    #}
+    
+{% endblock %}

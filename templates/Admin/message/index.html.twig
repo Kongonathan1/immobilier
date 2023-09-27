@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block body %}
+<header class="mb-4">
+    {{ include("Admin/partials/_topbar.html.twig") }}
+</header>
+
+<div class="container bt"> 
+    {{ include("partials/_flash/success.html.twig") }}
+    {{ include("partials/_flash/danger.html.twig") }}
+    <h1 class="mb-4">Listes des messages</h1>
+    {#
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Firstname</th>
+                    <th>Name</th>
+                    <th>Phone_number</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                <tr>
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.firstname }}</td>
+                    <td>{{ message.name }}</td>
+                    <td>{{ message.phoneNumber }}</td>
+                    <td>{{ message.email }}</td>
+                    <td>{{ message.message }}</td>
+                    <td>
+                        <a href="{{ path('app_message_show', {'id': message.id}) }}">show</a>
+                        <a href="{{ path('app_message_edit', {'id': message.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    #}
+    {% for message in messages %}
+        <div class="card mb-4 p-2">
+            {% if message.property %}
+                <div class="card-title mb-3 d-flex justify-content-between">
+                    <h1>Propriété ciblée: "{{ message.property.title }}"</h1>
+                    {{ include('Admin/message/_delete_form.html.twig') }}
+                </div>
+            {% else %}
+                <div class="card-title mb-3 mb-3 d-flex justify-content-between">
+                    <h1>Message de la page d'acceuil</h1>
+                    {{ include('Admin/message/_delete_form.html.twig') }}
+                </div>
+            {% endif %}
+            <div class="card-body">
+                <h3> <span class="text-primary">Nom: </span>{{ message.name }}</h3> 
+                <h3> <span class="text-primary">Pénom: </span>{{ message.firstname }}</h3> 
+                <h3> <span class="text-primary">N° de téléphone: </span>{{ message.phoneNumber }}</h3> 
+                <h3> <span class="text-primary">E-mail: </span>{{ message.email }}</h3> 
+                <h3> <span class="text-primary">Message: </span>{{ message.message }}</h3> 
+            </div>
+        </div>
+    {% else %}
+        Aucun message :(
+    {% endfor %}
+</div>
+{% endblock %}

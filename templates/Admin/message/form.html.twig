@@ -1,0 +1,40 @@
+
+{{ form_start(form) }}
+    <div class="form-group">
+        {{ form_row(form.name) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.firstname) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.email) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.phone_number) }}
+    </div>
+    <div class="d-flex flex-wrap">
+        {{ form_row(form.message) }}
+        <button type="submit" class="btn">Envoyez</button>
+    </div>
+{{ form_end(form) }}
+
+{#
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.firstname) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.phone_number) }}
+        </div>
+    </div>
+    {{ form_row(form.message) }}
+
+#}

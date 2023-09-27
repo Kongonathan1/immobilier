@@ -1,0 +1,395 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Plantagenet Cherokee";
+  font-size: 18px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar {
+  z-index: 5;
+  background-color: rgb(35, 34, 48);
+  color: rgb(229, 43, 75);
+  padding: 15px;
+  padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.topbar .logo {
+  max-width: 500px;
+}
+
+.nav-item {
+  margin-top: 15px;
+}
+
+.nav-item a {
+  padding-right: 25px;
+  transition: 0.2s;
+}
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  height: 600px;
+  background: url("../IMG/Img (7).jpg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 45px;
+  position: relative;
+}
+.banner .content {
+  margin-top: 10%;
+  overflow: hidden;
+  font-size: 20px;
+  color: rgb(233, 240, 252);
+  font-family: "Lucida Calligraphy";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: center;
+  left: center;
+}
+.banner .content_title {
+  margin-bottom: 10%;
+  margin-top: 0;
+}
+.banner .content_title .title_format {
+  font-family: "Lucida Fax";
+  color: rgb(120, 150, 176);
+}
+.banner .content_title .title_format .color {
+  color: rgb(229, 43, 75);
+}
+.banner p {
+  color: rgb(0, 36, 70);
+  background-color: azure;
+  border-radius: 5px;
+  padding: 12px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.banner form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+}
+
+.search {
+  width: 1200px;
+  margin-bottom: 35px;
+}
+.search h2 {
+  font-size: 2.3rem;
+  font-family: "Castellar";
+}
+.search h4 {
+  color: rgb(42, 42, 42);
+}
+
+.form-group, .contact .right .form-group {
+  margin: 0 15px;
+}
+.form-group .form-control, .contact .right .form-group .form-control {
+  border-radius: 3px;
+  padding: 10px 25px;
+  color: #1c021c;
+  border: none;
+  border-bottom: solid 0.5px rgb(246, 240, 240);
+  background-color: transparent;
+  color: #1a1a19;
+}
+.form-group .form-control::placeholder, .contact .right .form-group .form-control::placeholder {
+  color: #1a1a19;
+  font-size: 16px;
+  font-family: "Consolas";
+}
+.form-group .form-control:focus {
+  outline: 0;
+  border-radius: 3px;
+}
+
+main {
+  overflow: hidden;
+}
+
+.properties {
+  padding: 25px;
+  background-color: azure;
+}
+.properties .properties_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.properties .card_body {
+  background-color: white;
+  width: 350px;
+  color: rgb(8, 87, 8);
+  z-index: 1;
+  padding: 10px;
+  width: 550px;
+}
+.properties .card_body strong {
+  font-size: 1.1rem;
+  color: rgb(1, 35, 1);
+}
+.properties .card {
+  z-index: 0;
+  margin-bottom: 50px;
+}
+.properties .card img {
+  width: 570px;
+}
+
+.more, .contact .right .btn {
+  padding: 15px 2.5rem;
+  color: rgb(229, 43, 75);
+  background-color: transparent;
+  border: solid 0.8px gold;
+  display: inline-block;
+  margin-top: 15px;
+  transition: all 0.4s;
+  font-family: "Edwardian Script ITC";
+  font-size: 2.5rem;
+}
+.more:hover, .contact .right .btn:hover {
+  background-color: rgba(218, 165, 32, 0.2);
+  cursor: pointer;
+}
+
+.properties_title {
+  margin-left: 25%;
+  margin-bottom: 8%;
+  color: rgb(1, 35, 1);
+}
+
+.title, .contact h1 {
+  font-family: "Elephant";
+  font-size: 2.3rem;
+  color: rgb(37, 2, 54);
+}
+
+.about_we {
+  background: url("../IMG/banner_we.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 75px;
+  padding-left: 50px;
+}
+.about_we .content {
+  background-color: azure;
+  border-radius: 5px;
+  padding: 55px;
+  text-align: justify;
+  line-height: 1.7;
+  width: 580px;
+  font-family: "Ebrima";
+}
+
+.team {
+  color: whitesmoke;
+  overflow: hidden;
+  /*background-color: rgb(1, 27, 1);*/
+  background-color: rgb(27, 27, 39);
+  padding: 50px;
+}
+.team h3, .team h6, .team p {
+  margin: 0px 10px 10px 10px;
+}
+.team .name, .team h6 {
+  color: rgb(229, 43, 75);
+}
+.team .team_title {
+  color: whitesmoke;
+  font-family: "Felix Titling";
+  font-size: 2.3rem;
+}
+.team .team_details {
+  width: 350px;
+  gap: 15px;
+  float: right;
+}
+.team .team_information {
+  margin-top: 2%;
+}
+.team .team_flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.team img {
+  margin-right: 5px;
+}
+.team a {
+  margin-left: 35%;
+  margin-top: 8%;
+  color: rgb(229, 43, 75);
+  padding: 15px 1.5rem;
+  background-color: transparent;
+  border: solid 0.8px gold;
+}
+
+.expertise {
+  overflow: hidden;
+  padding: 0 30px 0px 0;
+  color: rgb(18, 60, 18);
+}
+.expertise .left {
+  width: 600px;
+  float: left;
+}
+.expertise .left img {
+  width: 550px;
+  border: solid 10px white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.186);
+}
+.expertise .left .top {
+  padding-left: 50px;
+}
+.expertise .left a {
+  margin-bottom: 10%;
+  margin-left: 15%;
+  margin-top: 8%;
+  padding: 15px 1.5rem;
+  background-color: white;
+  color: rgb(229, 43, 75);
+  border: solid 0.8px gold;
+}
+.expertise .left a:hover {
+  background-color: rgba(218, 165, 32, 0.208);
+}
+.expertise .left p {
+  line-height: 1.8;
+}
+.expertise .right {
+  font-family: "Simplified Arabic Fixed";
+  margin-top: 12%;
+  line-height: 2.8;
+  float: right;
+}
+.expertise .right ul {
+  list-style: none;
+}
+.expertise .right ul li::before {
+  content: "•";
+  color: gold;
+}
+
+.contact {
+  overflow: hidden;
+  margin-top: -5px;
+  background-color: rgb(247, 239, 225);
+  padding: 40px;
+  color: rgb(0, 36, 70);
+}
+.contact .left .content {
+  width: 500px;
+}
+.contact .dirigeants {
+  line-height: 2.5;
+}
+.contact .left {
+  float: left;
+}
+.contact .right {
+  float: right;
+  margin-top: 8%;
+}
+.contact .right .form-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact .right .form-group input, .contact .right .form-group textarea {
+  width: 250px;
+  padding: 8px 7px;
+  border: none;
+  border-bottom: solid 1px goldenrod;
+  background-color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact .right .form-group input:focus-visible, .contact .right .form-group textarea:focus-visible {
+  outline: none;
+  background-color: rgba(248, 230, 185, 0.2);
+}
+.contact .right .form-group textarea {
+  border: solid 1px goldenrod;
+  width: 550px;
+}
+.contact .right form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 600px;
+}
+.contact .right .btn {
+  background-color: transparent;
+  color: rgb(65, 56, 6);
+  border-color: goldenrod;
+  margin-left: 12px;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-family: "Castellar";
+  margin-top: 0px;
+}
+
+.contact {
+  display: grid;
+  background-color: white;
+  grid-template-areas: "div div";
+  grid-template-columns: 700px 1fr;
+  z-index: 1;
+  padding: 15px;
+  padding-bottom: 35px;
+  margin-top: 7%;
+}
+.contact .left {
+  margin-right: 15px;
+  color: black;
+}
+.contact .left img {
+  width: 100%;
+  height: auto;
+}
+.contact .right {
+  transform: translateY(-8%);
+  padding-right: 15px;
+  text-align: center;
+  color: rgb(8, 87, 8);
+}
+.contact .right .price {
+  color: goldenrod;
+}
+.contact .right .form-group input, .contact .right .form-group textarea {
+  width: 200px;
+}
+.contact .right .form-group textarea {
+  width: 490px;
+}
+.contact .right form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 500px;
+}
+.contact strong {
+  font-size: 1.1rem;
+  color: rgb(1, 35, 1);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau bien{% endblock %}
+
+{% block body %}
+<header>
+    {{ include("Admin/partials/_topbar.html.twig") }}
+</header>
+<div class="container bt bb">
+    <h1 class="mb-4" >Créer un nouveau bien</h1>
+    <a href="{{ path('app_admin_properties_index') }}" class="text-primary text-decoration-underline mb-4" >Revenir au listing des biens</a>
+    {{ include('Admin/admin_properties/_form.html.twig') }}
+</div>
+{% endblock %}

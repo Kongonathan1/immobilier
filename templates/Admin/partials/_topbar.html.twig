@@ -1,0 +1,14 @@
+<div class="topbar">
+    <div class="logo">
+        <a href="{{ path('app_main') }} "><img src=" {{ asset('asset/img/fixe/logo.png') }} " alt="" srcset="" width="200px"></a>
+    </div>
+    <div class="nav-item">
+        <a href="#" class="disabled">Adminsitration</a>
+        <a href=" {{ path('app_admin_properties_index') }} ">Gérer les biens</a>
+        <a href=" {{ path('app_admin_options_index') }} ">Gérer les options</a>
+        <a href=" {{ path('app_admin_messages_index') }} ">Message(s)</a>
+        {% if app.user %}
+            <a href=" {{ path('app_logout') }} ">Se déconnecter</a>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les options{% endblock %}
+
+{% block body %}   
+    <header class="mb-4">
+        {{ include("Admin/partials/_topbar.html.twig") }}
+    </header>
+
+<div class="container bt"> 
+    {{ include("partials/_flash/success.html.twig") }}
+    {{ include("partials/_flash/danger.html.twig") }}
+    <div class="mb-4">
+        <h1 class="mb-2">Administration des options</h1>
+        <a class="btn btn-primary" href="{{ path('app_admin_options_new') }}">Ajouter une option</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for option in options %}
+            <tr>
+                <td>{{ option.name }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-primary me-4" href="{{ path('app_admin_options_edit', {'id': option.id}) }}">Modifier</a>
+                    {{ include('Admin/options/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucune option trouvée :( </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

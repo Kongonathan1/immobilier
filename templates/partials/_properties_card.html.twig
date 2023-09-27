@@ -1,0 +1,9 @@
+<div class="card">
+    <img src=" {{ vich_uploader_asset(property, 'imageFile') }} " alt="" width="55%">
+    <div class="card_body">
+        <small> {{ property.city }} </small>
+        <h3>{{ property.title }}</h3>
+        <strong>{{property.price |  number_format(0,'', ' ')}} €</strong><br>
+        <a href=" {{ path('app_property_show', {id: property.id}) }} " class="more">Details</a>
+    </div>
+</div>
